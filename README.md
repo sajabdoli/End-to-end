@@ -1,2 +1,2 @@
 # End-to-end_jsalt
-end to end models for speacker recognition
+end to end models for speacker Verification
