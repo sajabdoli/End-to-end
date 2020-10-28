@@ -2,6 +2,14 @@ def model_generator():
     from keras.layers import Input, Dense
     from keras.models import Model
     from keras.callbacks import ModelCheckpoint
+    import scipy.io as sio
+    
+    contents_mat=sio.loadmat('/home/an80020/Desktop/for_mohsen/filters.mat')
+    gammatone = contents_mat['filters']
+    w_coch = np.transpose(gammatone)
+    w_coch2=np.zeros((512,64))
+    for i in reversed(range(64)):
+        w_coch2[:,63-i]=w_coch[:,i]
 
     inp = Input(shape=(50999, 1))
 
